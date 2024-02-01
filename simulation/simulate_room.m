@@ -20,9 +20,9 @@ rir_length = 8192;
 %% Option
 options = MCRoomSimOptions('Fs', mcroomsim_fs, 'SimDiff', simulate_diffuse, 'Verbose', false);
 
-files = dir(fullfile(razr_base_folder, '**', 'room_*.mat'));
+files = dir(fullfile(razr_base_folder, 'humanoldenburg/**', 'room_1.mat'));
 
-for i_room = 1:1
+for i_room = 1:numel(files)
     razr_room_path = fullfile(files(i_room).folder, files(i_room).name);
     
     % Simulate the same room as in razr_room path using MCRoomSim, and save the

@@ -47,6 +47,10 @@ function [room_rev, room_dry, receivers, sources, original_hrir_fs] = load_scene
         response = permute(resample(permute(response, [2 1 3]), fs, original_hrir_fs), [2 1 3]);
     end
     
+    receivers = []
+    for i = 1:size(response, 3)
+        rece
+    
     % Receiver orientation is in values [yaw, pitch, roll].
     % For RAZR we only added azimuth and elevation, meaning roll = 0.
     receivers = AddReceiver(...
